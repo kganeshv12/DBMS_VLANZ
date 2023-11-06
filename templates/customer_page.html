@@ -1,0 +1,183 @@
+<!-- <!DOCTYPE html>
+<html>
+
+<head>
+   <title>Customer Page</title>
+</head>
+
+<body>
+   <h2>Current Freelance Services</h2>
+
+   <table>
+      <thead>
+         <th>Service ID</th>
+         <th>Freelancer Name</th>
+         <th>Domain</th>
+         <th>Description</th>
+      </thead>
+      {% for freelancer in freelancers %}
+      <tbody>
+         <td>{{freelancer.id}}</td>
+         <td>{{freelancer.name}}</td>
+         <td>{{freelancer.domain}}</td>
+         <td>{{freelancer.description}}</td>
+         <td>
+            <form method="POST" action="/buy/{{ freelancer.id }}">
+               <input type="submit" value="Buy" />
+            </form>
+         </td>
+      </tbody>
+      {% endfor %}
+   </table>
+
+   <br>
+
+   <h2>Order History</h2>
+   <table>
+      <thead>
+      </thead>
+      <tbody>
+         {% for order in current_user.orders %}
+         <tr>
+            <td>Service ID: {{ order.freelancer.id }}</td>
+            <td>Time: {{ order.order_date }}</td>
+         </tr>
+         {% endfor %}
+      </tbody>
+   </table>
+
+   <form method="get" action="/logout">
+      <button type="submit">Log Out</button>
+   </form>
+
+</body>
+
+</html> -->
+
+
+<!DOCTYPE html>
+<html>
+
+<head>
+   <title>Customer Page</title>
+   <style>
+      body {
+         background-color: #f0f0f0;
+         font-family: Arial, sans-serif;
+         text-align: center;
+      }
+
+      h2 {
+         color: #333;
+      }
+
+      table {
+         border-collapse: collapse;
+         width: 80%;
+         margin: 0 auto;
+         background-color: #fff;
+         border: 1px solid #ccc;
+         border-radius: 5px;
+         margin-bottom: 20px;
+      }
+
+      th, td {
+         padding: 10px;
+         border: 1px solid #ccc;
+         text-align: center;
+      }
+
+      th {
+         background-color: #4CAF50;
+         color: #fff;
+      }
+
+      form {
+         margin: 0;
+         display: inline;
+      }
+
+      input[type="submit"] {
+         background-color: #008CBA;
+         color: #fff;
+         padding: 10px 20px;
+         border: none;
+         border-radius: 3px;
+         cursor: pointer;
+      }
+
+      input[type="submit"]:hover {
+         background-color: #00739D; /* Darker blue on hover */
+      }
+
+      button[type="submit"] {
+         background-color: #4CAF50;
+         color: #fff;
+         padding: 10px 20px;
+         border: none;
+         border-radius: 3px;
+         cursor: pointer;
+      }
+
+      button[type="submit"]:hover {
+         background-color: #45a049; /* Darker green on hover */
+      }
+   </style>
+</head>
+
+<body>
+   <h2>Current Freelance Services</h2>
+
+   <table>
+      <thead>
+         <tr>
+            <th>Service ID</th>
+            <th>Freelancer Name</th>
+            <th>Domain</th>
+            <th>Description</th>
+            <th>Action</th>
+         </tr>
+      </thead>
+      {% for freelancer in freelancers %}
+      <tbody>
+         <tr>
+            <td>{{freelancer.id}}</td>
+            <td>{{freelancer.name}}</td>
+            <td>{{freelancer.domain}}</td>
+            <td>{{freelancer.description}}</td>
+            <td>
+               <form method="POST" action="/buy/{{ freelancer.id }}">
+                  <input type="submit" value="Buy" />
+               </form>
+            </td>
+         </tr>
+      </tbody>
+      {% endfor %}
+   </table>
+
+   <h2>Order History</h2>
+   <table>
+      <thead>
+         <tr>
+            <th>Service ID</th>
+            <th>Time</th>
+         </tr>
+      </thead>
+      <tbody>
+         {% for order in current_user.orders %}
+         <tr>
+            <td>Service ID: {{ order.freelancer.id }}</td>
+            <td>Time: {{ order.order_date }}</td>
+         </tr>
+         {% endfor %}
+      </tbody>
+   </table>
+
+   <form method="get" action="/logout">
+      <button type="submit">Log Out</button>
+   </form>
+
+</body>
+
+</html>
+

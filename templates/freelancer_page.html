@@ -1,0 +1,126 @@
+<!-- <!DOCTYPE html>
+<html>
+
+<head>
+    <title>Freelancer Page</title>
+</head>
+
+<body>
+    <h2>Current Freelance Services in VLANZ</h2>
+
+    <table>
+        <thead>
+            <th>Freelancer Name</th>
+            <th>Domain</th>
+            <th>Description</th>
+        </thead>
+        {% for freelancer in freelancers %}
+        <tbody>
+            <td>{{freelancer.name}}</td>
+            <td>{{freelancer.domain}}</td>
+            <td>{{freelancer.description}}</td>
+        </tbody>
+        {% endfor %}
+    </table>
+
+
+    <form method="get" action="/add_service">
+        <button type="submit">Add Service</button>
+    </form>
+
+
+    <form method="get" action="/logout">
+        <button type="submit">Log Out</button>
+    </form>
+</body>
+
+</html> -->
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Freelancer Page</title>
+    <style>
+        body {
+            background-color: #f0f0f0;
+            font-family: Arial, sans-serif;
+            text-align: center;
+        }
+
+        h2 {
+            color: #333;
+        }
+
+        table {
+            border-collapse: collapse;
+            width: 80%;
+            margin: 0 auto;
+            background-color: #fff;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        th, td {
+            padding: 10px;
+            border: 1px solid #ccc;
+        }
+
+        th {
+            background-color: #4CAF50;
+            color: #fff;
+        }
+
+        th, td {
+            text-align: left;
+        }
+
+        form {
+            margin: 20px 0;
+        }
+
+        button {
+            background-color: #008CBA;
+            color: #fff;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 3px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #00739D; /* Darker blue on hover */
+        }
+    </style>
+</head>
+<body>
+    <h2>Current Freelance Services in VLANZ</h2>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Freelancer Name</th>
+                <th>Domain</th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for freelancer in freelancers %}
+            <tr>
+                <td>{{freelancer.name}}</td>
+                <td>{{freelancer.domain}}</td>
+                <td>{{freelancer.description}}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+
+    <form method="get" action="/add_service">
+        <button type="submit">Add Service</button>
+    </form>
+
+    <form method="get" action="/logout">
+        <button type="submit">Log Out</button>
+    </form>
+</body>
+</html>
+

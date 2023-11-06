@@ -1,0 +1,111 @@
+<!-- <!DOCTYPE html>
+<html>
+
+<head>
+    <title>Register</title>
+</head>
+
+<body>
+    <h1>Register</h1>
+    <form method="POST">
+        {{ form.hidden_tag() }}
+        <div>
+            {{ form.username.label() }}
+            {{ form.username() }}
+        </div>
+        <div>
+            {{ form.password.label() }}
+            {{ form.password() }}
+        </div>
+        <div>
+            {{ form.role.label() }}
+            {{ form.role() }}
+        </div>
+        <div>
+            {{ form.submit() }}
+        </div>
+    </form>
+</body>
+
+</html> -->
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Register</title>
+    <style>
+        body {
+            background-color: #f0f0f0; /* Background color */
+            font-family: Arial, sans-serif;
+        }
+
+        h1 {
+            text-align: center;
+            color: #333; /* Text color */
+        }
+
+        form {
+            max-width: 400px; /* Limit form width */
+            margin: 0 auto; /* Center the form horizontally */
+            background-color: #fff; /* Form background color */
+            padding: 20px;
+            border: 1px solid #ccc; /* Form border */
+            border-radius: 5px; /* Rounded corners */
+        }
+
+        form div {
+            margin: 10px 0;
+        }
+
+        label {
+            display: block;
+            font-weight: bold;
+        }
+
+        input[type="text"],
+        input[type="password"],
+        select {
+            width: 100%;
+            padding: 10px;
+            margin: 5px 0;
+            border: 1px solid #ccc; /* Input border */
+            border-radius: 3px; /* Rounded corners */
+        }
+
+        button[type="submit"] {
+            background-color: #4CAF50; /* Submit button background color */
+            color: #fff; /* Text color */
+            padding: 10px 20px;
+            border: none;
+            border-radius: 3px; /* Rounded corners */
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Register</h1>
+    <form method="POST">
+        {{ form.hidden_tag() }}
+        <div>
+            <label for="username">Username</label>
+            <input type="text" id="username" name="username">
+        </div>
+        <div>
+            <label for="password">Password</label>
+            <input type="password" id="password" name="password">
+        </div>
+        <div>
+            <label for="role">Role</label>
+            <select id="role" name="role">
+                <option value="customer">Customer</option>
+                <option value="freelancer">Freelancer</option>
+            </select>
+        </div>
+        <div>
+            <button type="submit">Register</button>
+        </div>
+    </form>
+</body>
+
+</html>

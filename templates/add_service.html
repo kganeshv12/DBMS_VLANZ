@@ -1,0 +1,112 @@
+<!-- <!DOCTYPE html>
+<html>
+
+<head>
+   <title>Add Service</title>
+</head>
+
+<body>
+   <h2>Add a New Service</h2>
+   <form method="POST">
+      {{ form.hidden_tag() }}
+      <div>
+         {{ form.name.label() }}
+         {{ form.name(placeholder="Freelancer Name") }}
+      </div>
+      <div>
+         {{ form.domain.label() }}
+         {{ form.domain(placeholder="Service Domain") }}
+      </div>
+      <div>
+         {{ form.description.label() }}
+         {{ form.description(placeholder="Service Description") }}
+      </div>
+      <div>
+         {{ form.submit(value="Add Service") }}
+      </div>
+   </form>
+</body>
+
+</html> -->
+
+
+<!DOCTYPE html>
+<html>
+
+<head>
+   <title>Add Service</title>
+   <style>
+      body {
+         background-color: #f0f0f0;
+         font-family: Arial, sans-serif;
+         text-align: center;
+      }
+
+      h2 {
+         color: #333;
+      }
+
+      form {
+         max-width: 400px;
+         margin: 0 auto;
+         background-color: #fff;
+         padding: 20px;
+         border: 1px solid #ccc;
+         border-radius: 5px;
+      }
+
+      form div {
+         margin: 10px 0;
+      }
+
+      label {
+         display: block;
+         font-weight: bold;
+      }
+
+      input[type="text"] {
+         width: 100%;
+         padding: 10px;
+         margin: 5px 0;
+         border: 1px solid #ccc;
+         border-radius: 3px;
+      }
+
+      button[type="submit"] {
+         background-color: #4CAF50;
+         color: #fff;
+         padding: 10px 20px;
+         border: none;
+         border-radius: 3px;
+         cursor: pointer;
+      }
+
+      button[type="submit"]:hover {
+         background-color: #45a049; /* Darker green on hover */
+      }
+   </style>
+</head>
+
+<body>
+   <h2>Add a New Service</h2>
+   <form method="POST">
+      {{ form.hidden_tag() }}
+      <div>
+         <label for="name">Freelancer Name</label>
+         {{ form.name(placeholder="Freelancer Name") }}
+      </div>
+      <div>
+         <label for="domain">Service Domain</label>
+         {{ form.domain(placeholder="Service Domain") }}
+      </div>
+      <div>
+         <label for="description">Service Description</label>
+         {{ form.description(placeholder="Service Description") }}
+      </div>
+      <div>
+         <button type="submit">Add Service</button>
+      </div>
+   </form>
+</body>
+
+</html>
